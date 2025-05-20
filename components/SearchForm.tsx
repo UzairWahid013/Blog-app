@@ -8,7 +8,7 @@ const SearchForm = ({query} : {query?:string}) => {
     <Form action="/" scroll={false} className="search-form">
       <input
         name="query"
-        defaultValue={query}
+        // defaultValue={query}
         className="search-input"
         placeholder="Search Startups"
       />
