@@ -29,6 +29,7 @@ const StartupCard = async ({post} : {post: any}) => {
 
   const authorId = author?._id || '';
   const session = await auth();
+  const githubProfileImg = session?.user?.image;
   const displayName = author?.name || session?.user?.name || 'Anonymous';
   return (
     <Card className="group bg-neutral-200">
@@ -53,7 +54,7 @@ const StartupCard = async ({post} : {post: any}) => {
             </Link>
           </div>
           <Link href={`/user/${authorId}`}>
-            <Image src="https://avatars.githubusercontent.com/u/74147338?v=4&size=64" alt="placeholder" width={48} height={48} className="rounded-full" />
+            <Image src={githubProfileImg || 'https://avatars.githubusercontent.com/u/74147338?v=4&size=64'}  alt="placeholder" width={48} height={48} className="rounded-full" />
           </Link>
         </div>
       </CardHeader>
